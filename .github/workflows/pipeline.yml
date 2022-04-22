@@ -1,0 +1,20 @@
+name: Python
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2
+      -runs: python python_script.py
+  
+  build:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v2
+      -uses: actions/upload-artifact@v2
+      with:
+        name: python_script
+        path: .
