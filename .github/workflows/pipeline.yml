@@ -12,9 +12,9 @@ jobs:
   build:
     needs: [test]
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       -uses: actions/checkout@v2
-      -uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: python_script
         path: .
